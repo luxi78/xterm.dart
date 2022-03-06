@@ -169,6 +169,7 @@ class _TerminalViewState extends State<TerminalView> {
   @override
   Widget build(BuildContext context) {
     return InputListener(
+      key: widget.terminal.inputKey,
       listenKeyStroke: widget.inputBehavior.acceptKeyStroke,
       onKeyStroke: onKeyStroke,
       onTextInput: onInput,

@@ -15,6 +15,7 @@ abstract class InputListenerController {
 
 class InputListener extends StatefulWidget {
   InputListener({
+    Key? key,
     required this.child,
     required this.onKeyStroke,
     required this.onTextInput,
@@ -30,7 +31,7 @@ class InputListener extends StatefulWidget {
     this.inputAction = TextInputAction.done,
     this.keyboardAppearance = Brightness.light,
     this.autocorrect = false,
-  });
+  }):super(key:key);
 
   final Widget child;
   final InputHandler onTextInput;

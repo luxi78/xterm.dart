@@ -2,8 +2,10 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:math' show max, min;
 
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:xterm/buffer/buffer.dart';
 import 'package:xterm/buffer/line/line.dart';
+import 'package:xterm/frontend/input_listener.dart';
 import 'package:xterm/input/keys.dart';
 import 'package:xterm/input/keytab/keytab.dart';
 import 'package:xterm/input/keytab/keytab_escape.dart';
@@ -40,6 +42,7 @@ class Terminal
     with Observable
     implements TerminalUiInteraction, TerminalSearchInteraction {
   Terminal({
+    this.inputKey,
     this.backend,
     this.onBell = _defaultBellHandler,
     this.onTitleChange = _defaultTitleHandler,
@@ -805,4 +808,7 @@ class Terminal
       setScrollOffsetFromBottom(buffer.height - desiredScrollOffsetFromTop);
     }
   }
+
+  @override
+  GlobalKey<InputListenerState>? inputKey;
 }

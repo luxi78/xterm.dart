@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:xterm/buffer/line/line.dart';
+import 'package:xterm/frontend/input_listener.dart';
 import 'package:xterm/input/keys.dart';
 import 'package:xterm/mouse/position.dart';
 import 'package:xterm/mouse/selection.dart';
@@ -11,6 +13,8 @@ import 'package:xterm/util/observable.dart';
 abstract class TerminalUiInteraction with Observable {
   /// The theme associated with this Terminal
   TerminalTheme get theme;
+
+  GlobalKey<InputListenerState>? inputKey;
 
   /// the ViewPort scroll offset from the bottom
   int get scrollOffsetFromBottom;
