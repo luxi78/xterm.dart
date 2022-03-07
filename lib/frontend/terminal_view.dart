@@ -210,7 +210,7 @@ class _TerminalViewState extends State<TerminalView> {
           return NotificationListener<ScrollNotification>(
             onNotification: (notification) {
               //onScroll(notification.metrics.pixels);
-              new Future.microtask(() => onScroll(notification.metrics.pixels));
+              //new Future.microtask(() => onScroll(notification.metrics.pixels));
               return false;
             },
             child: ScrollConfiguration(
